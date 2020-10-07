@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  exasol:
+    # find out about the wls IP with `ip addr | grep eth0`
+    build:
+      context: ./exasol
+      dockerfile: exasol.Dockerfile
+    volumes:
+      - ./data:/data
+    restart: always
+    ports:
+      - 8563:8563
+    privileged: true
+    stdin_open: true # docker run -i
+    tty: tr      # docker run -t
