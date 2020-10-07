@@ -12,4 +12,4 @@ services:
       - 8563:8563
     privileged: true
     stdin_open: true # docker run -i
-    tty: tr      # docker run -t
+    tty: true      # docker run -t
